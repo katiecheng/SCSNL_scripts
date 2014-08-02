@@ -17,7 +17,7 @@ print
 
 # create score file
 with open(new_filename, 'wb') as score_csv:
-    row = "PID,E,S,D,category\n"
+    row = "PID,E_raw,E_standard,S_raw,S_standard,D,category\n"
     score_csv.write(row)
 
 
@@ -90,7 +90,7 @@ with open(csv_filename) as eqsq_csv:
             category = 'Extreme Type S'
 
         with open(new_filename, 'a') as score_csv:
-            row = "%s,%r,%r,%r,%s\n" %(row_dict['PID'], E, S, D, category)
+            row = "%s,%r,%r,%r,%r,%r,%s\n" %(row_dict['PID'], eq_score, E, sq_score, S, D, category)
             score_csv.write(row)
 
 print "Scoring complete."
